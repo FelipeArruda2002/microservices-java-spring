@@ -23,7 +23,7 @@ public class UserProducer {
         emailPojo.setUserId(user.getId());
         emailPojo.setEmailTo(user.getEmail());
         emailPojo.setSubject("Cadastro realizado com sucesso!!");
-        emailPojo.setText(String.format("Olá %s. Seja muito bem-vindo à nossa plataforma! Seu cadastro foi concluído com sucesso. Aproveite ao máximo todas as funcionalidades disponíveis.", user.getName()));
+        emailPojo.setText(String.format("Olá %s. Seja muito bem-vindo à nossa plataforma! \n Seu cadastro foi concluído com sucesso. Aproveite ao máximo todas as funcionalidades disponíveis.", user.getName()));
 
         rabbitTemplate.convertAndSend("", routingKey, emailPojo);
     }
